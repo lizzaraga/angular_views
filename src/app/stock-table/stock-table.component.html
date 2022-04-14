@@ -1,0 +1,33 @@
+<h2 style="color: #444; font-weight: 500">Consulter vos Flash Cash</h2>
+<div class="table-container">
+    <div class="static-containers" [ngClass]="addShadow ? 'add-shadow' : ''">
+        <div class="static-container">
+            <span class="header"><strong>N° du Flash cash</strong></span>
+            <span *ngFor="let i of [].constructor(items.length)">{{i}}</span>
+
+        </div>
+        <div class="static-container">
+            <span class="header"><strong>Pin 1</strong></span>
+            <span *ngFor="let i of [].constructor(items.length)">{{i}}</span>
+
+        </div>
+        <div class="static-container">
+            <span class="header"><strong>Pin 2</strong></span>
+            <span *ngFor="let i of [].constructor(items.length)">{{i}}</span>
+
+        </div>
+    </div>
+    <div (scroll)="onScroll($event)" class="overflow-container">
+        <table>
+            <thead>
+                <th *ngFor="let i of items">Height {{i}}</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of items">
+                    <td *ngFor="let i of items">L{{i}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

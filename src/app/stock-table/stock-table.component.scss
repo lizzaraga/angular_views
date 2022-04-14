@@ -1,0 +1,84 @@
+$cell-height: 45px;
+$border-color: #EEE;
+.table-container {
+    display: flex;
+    border: 1px solid #EEE;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 5px 0px 10px rgba($color: #000000, $alpha: 0.1);
+    transition: box-shadow 0.5s ease;
+    .static-containers {
+        display: flex;
+        &.add-shadow {
+            box-shadow: 2px 0px 25px rgba($color: #000000, $alpha: 0.07), 1px 0px 3px rgba($color: #000000, $alpha: 0.05);
+        }
+        .static-container {
+            min-width: 230px;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid $border-color;
+            z-index: 2;
+            &>span {
+                display: flex;
+                align-items: center;
+                height: $cell-height;
+                padding: 0 1rem;
+                border-bottom: 1px solid $border-color;
+                &:last-child {
+                    border-bottom: none
+                }
+            }
+            &:first-child {
+                border-left: none;
+            }
+        }
+    }
+    .overflow-container {
+        width: 100%;
+        border-left: 1px solid $border-color;
+        overflow-x: auto;
+        //background-color: #FAFAFA;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            thead {
+                padding: 0;
+                color: rgba($color: #000000, $alpha: 0.7);
+                th {
+                    text-align: start;
+                    height: $cell-height;
+                    padding: 0 1rem;
+                    border-bottom: 1px solid $border-color;
+                    border-right: 1px solid $border-color;
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    transition: background-color 0.3s;
+                    td {
+                        height: $cell-height;
+                        padding: 0 1rem;
+                        min-width: 250px;
+                        border-bottom: 1px solid $border-color;
+                        border-right: 1px solid $border-color;
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                    &:last-child {
+                        td {
+                            border-bottom: none;
+                        }
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgba($color: #1a1919, $alpha: 0.05);
+                    }
+                }
+            }
+        }
+    }
+}
